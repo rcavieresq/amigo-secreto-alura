@@ -32,17 +32,17 @@ function mostrarAmigos(x) {
 
 function sortearAmigo(){
     resultado.innerHTML = "";
+    let listaResultado = amigos;
 
-    if (amigos.length === 0){
-        alert("No se han ingresado amigos");
+    if (listaResultado.length === 0){
+        alert("No hay nombres para sortear");
     }
     else{
-        let indexRandom = Math.floor(Math.random()*amigos.length)
-        console.log (indexRandom);
-        let amigoSorteado = amigos[indexRandom];
+        let indexRandom = Math.floor(Math.random()*listaResultado.length)
+        let amigoSorteado = listaResultado[indexRandom];
         resultado.innerHTML = `El amigo secreto sorteado es: ${amigoSorteado}`;
+        listaResuiltado = listaResultado.splice(indexRandom, 1);
         lista.innerHTML = "";
-        amigos =[];
     }
     
 }
